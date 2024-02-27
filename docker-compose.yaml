@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+    composer:
+        build:
+            context: dockerfiles
+            dockerfile: composer.Dockerfile
+        container_name: composer
+        # command: ["composer", "install"]
+        # volumes:
+        # depends_on:
+
+    db:
+        build:
+            context: dockerfiles
+            dockerfile: postgres.Dockerfile
+        container_name: db
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_DB: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        volumes:
+            - ./sql:/sql
+            - db-data:/var/lib/postgresql/data
+
+volumes:
+    db-data:
