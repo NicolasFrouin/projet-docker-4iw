@@ -25,12 +25,8 @@ services:
             - ./sql:/sql
             - db-data:/var/lib/postgresql/data
     adminer:
-        build: 
-            context: dockerfiles
-            dockerfile: adminer.Dockerfile
+        image: adminer
         container_name: adminer
-        depends_on:
-            - db
         ports:
             - "8080:8080"
 
