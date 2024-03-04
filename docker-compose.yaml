@@ -33,16 +33,7 @@ services:
         volumes:
             - ./sql:/sql
             - db-data:/var/lib/postgresql/data
-    adminer:
-        build: 
-            context: dockerfiles
-            dockerfile: adminer.Dockerfile
-        container_name: adminer
-        ports:
-            - "8080:8080"
-        depends_on:
-            - db
-
+            
     adminer:
         image: adminer
         container_name: adminer
