@@ -8,7 +8,8 @@ Ce projet a pour but de mettre en place un environnement de développement pour 
 
 1. Cloner le dépôt GitHub
 2. Se rendre dans le dossier du projet
-3. Lancer la commande `docker-compose up -d`
+3. Lancer la commande `docker compose build --pull --no-cache`
+4. Et ensuite `docker compose up -d`
 
 ## Utilisation
 
@@ -23,6 +24,7 @@ https://hub.docker.com/repository/docker/nicolasfrouin/composer/general
 https://hub.docker.com/repository/docker/nicolasfrouin/postgres/general
 
 ## Symfony
+https://hub.docker.com/repository/docker/cheick18600/4iw3/general
 
 ## Auteurs
 
