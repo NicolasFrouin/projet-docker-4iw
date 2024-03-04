@@ -1,9 +1,6 @@
 #Utilisez l'image Alpine Linux comme base
 FROM alpine:latest
 
-#Mainteneur de l'image
-LABEL maintainer="Votre Nom <votre@email.com>"
-
 #Installation des dépendances nécessaires pour Adminer
 RUN apk --no-cache add php7 php7-session php7-pdo php7-pdo_pgsql
 
