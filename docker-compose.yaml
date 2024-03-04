@@ -35,6 +35,9 @@ services:
             - db-data:/var/lib/postgresql/data
             
     adminer:
+        # build:
+        #     context: dockerfiles
+        #     dockerfile: adminer.Dockerfile
         image: adminer
         container_name: adminer
         ports:
