@@ -10,13 +10,22 @@ services:
         # volumes:
         # depends_on:
 
+    symfony:
+        build:
+            context: dockerfiles
+            dockerfile: symfony.Dockerfile
+        ports:
+            - '8000:8000'
+        volumes:
+            - '/app:/app'
+    
     db:
         build:
             context: dockerfiles
             dockerfile: postgres.Dockerfile
         container_name: db
         ports:
-            - "5432:5432"
+            - "5432"
         environment:
             POSTGRES_DB: postgres
             POSTGRES_USER: postgres
@@ -25,5 +34,10 @@ services:
             - ./sql:/sql
             - db-data:/var/lib/postgresql/data
 
+    adminer:
+        image: adminer
+        container_name: adminer
+        ports:
+            - "8080:8080"
 volumes:
-    db-data:
+  db-data:
